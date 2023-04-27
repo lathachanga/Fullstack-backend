@@ -1,0 +1,29 @@
+package com.Fullstackbackend.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.Fullstackbackend.model.Todo;
+import com.Fullstackbackend.service.TodoService;
+
+@RestController
+public class TodoController {
+     
+	 @Autowired
+	 private TodoService todoservice;
+	
+	@PostMapping("/add")
+	public Todo createTodo(@RequestBody Todo todo) {
+		return todoservice.addTodo(todo);
+		
+	}
+	@Getmapping("/todos")
+	public List<Todo>  getTodos(){
+		return todoservice.FindAllTodo();
+		
+	}
+}

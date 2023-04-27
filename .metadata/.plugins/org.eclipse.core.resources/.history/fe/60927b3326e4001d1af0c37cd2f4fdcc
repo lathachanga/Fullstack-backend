@@ -1,0 +1,19 @@
+package com.Fullstackbackend.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.Fullstackbackend.model.Todo;
+import com.Fullstackbackend.repository.TodoRepository;
+
+public class TodoService {
+
+	
+	 @Autowired
+	 private  TodoRepository repo;
+	 
+	 public Todo addTodo(Todo todo) {
+		 return repo.save(todo);
+	 }
+	 
+	 
+}

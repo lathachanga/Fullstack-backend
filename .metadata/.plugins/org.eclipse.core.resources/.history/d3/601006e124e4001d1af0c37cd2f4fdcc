@@ -1,0 +1,9 @@
+package com.Fullstackbackend.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.Fullstackbackend.model.TodoList;
+
+public interface TodoRepository extends MongoRepository<TodoList, Integer> {
+
+}
